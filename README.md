@@ -20,6 +20,7 @@ Por ahora el lead desea presentar esta opción básica, luego se trabajaran los 
     3- Si un libro sale de la biblioteca con el estado “En sala”, el controlador conjuntamente con la antena dan aviso de la salida irregular.
     
 Criterios que se evaluaran:
+
     1- Si se puede guardar el libro
     2- Si se puede modificar un libro ya guardo con su código.
     3- Si se puede realizar consulta o mostrar un listado de los libros guardados.
