@@ -20,7 +20,7 @@ struct Libro
 vector<Libro> listaLibros;
 
 // Función para agregar un nuevo libro a la lista
-void agregarLibro()
+extern void agregarLibro()
 {
     Libro libro;
 
@@ -68,7 +68,7 @@ void agregarLibro()
 }
 
 // Función para modificar un libro de la lista
-void modificarLibro()
+extern void modificarLibro()
 {
     string codigo;
 
@@ -103,7 +103,7 @@ void modificarLibro()
 }
 
 // Función para eliminar un libro de la lista
-void eliminarLibro()
+extern void eliminarLibro()
 {
     string codigo;
 
@@ -124,7 +124,7 @@ void eliminarLibro()
 }
 
 // Función para prestar un libro
-void prestarLibro()
+extern void prestarLibro()
 {
     string codigo;
 
@@ -154,7 +154,7 @@ void prestarLibro()
 }
 
 // Función para devolver un libro
-void devolverLibro()
+extern void devolverLibro()
 {
     string codigo;
 
@@ -184,7 +184,7 @@ void devolverLibro()
 }
 
 // Función para realizar una consulta o búsqueda en la lista de libros
-void consultarLibro()
+extern void consultarLibro()
 {
     string codigo;
 
@@ -221,7 +221,7 @@ void consultarLibro()
 }
 
 // Función que muestra todos los libros guardados en la biblioteca
-void mostrarLibros()
+extern void mostrarLibros()
 {
     for (int i = 0; i < listaLibros.size(); i++)
     {
