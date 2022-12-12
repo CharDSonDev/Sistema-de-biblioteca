@@ -10,6 +10,7 @@ struct Libro
     string codigo;
     string titulo;
     string autor;
+    string apellido;
     string area;
     string publicador;
     string estado;
@@ -50,6 +51,9 @@ void agregarLibro()
     cout << "Ingresa el autor del libro: ";
     cin >> libro.autor;
 
+    cout << "Ingresa el apellido del autor: ";
+    cin >> libro.apellido;
+
     cout << "Ingresa el área de conocimiento del libro: ";
     cin >> libro.area;
 
@@ -62,7 +66,6 @@ void agregarLibro()
     // Agregamos el libro al vector de libros
     listaLibros.push_back(libro);
 }
-
 
 // Función para modificar un libro de la lista
 void modificarLibro()
@@ -83,6 +86,9 @@ void modificarLibro()
 
             cout << "Ingresa el nuevo autor del libro: ";
             cin >> listaLibros[i].autor;
+
+            cout << "Ingresa el nuevo apellido del autor: ";
+            cin >> listaLibros[i].apellido;
 
             cout << "Ingresa el nuevo área de conocimiento del libro: ";
             cin >> listaLibros[i].area;
@@ -185,6 +191,8 @@ void consultarLibro()
     cout << "Ingresa el código del libro a consultar: ";
     cin >> codigo;
 
+    bool encontrado = false; // agregamos una bandera para saber si el libro fue encontrado
+
     // Buscamos el libro en la lista con el código especificado
     for (int i = 0; i < listaLibros.size(); i++)
     {
@@ -194,14 +202,24 @@ void consultarLibro()
             cout << "Código: " << listaLibros[i].codigo << endl;
             cout << "Título: " << listaLibros[i].titulo << endl;
             cout << "Autor: " << listaLibros[i].autor << endl;
+            cout << "Apellido: " << listaLibros[i].apellido << endl;
             cout << "Área de conocimiento: " << listaLibros[i].area << endl;
             cout << "Publicador: " << listaLibros[i].publicador << endl;
             cout << "Estado: " << listaLibros[i].estado << endl;
+
+            encontrado = true; // actualizamos la bandera para indicar que el libro fue encontrado
             // Finalizamos el ciclo una vez que el libro es consultado
             break;
         }
     }
+
+    // Si la bandera todavía es falsa, significa que el libro no fue encontrado
+    if (!encontrado)
+    {
+        cout << "Lo sentimos, no se encontró un libro con el código especificado" << endl;
+    }
 }
+
 // Función que muestra todos los libros guardados en la biblioteca
 void mostrarLibros()
 {
@@ -210,6 +228,7 @@ void mostrarLibros()
         cout << "Código: " << listaLibros[i].codigo << endl;
         cout << "Título: " << listaLibros[i].titulo << endl;
         cout << "Autor: " << listaLibros[i].autor << endl;
+        cout << "Apellido: " << listaLibros[i].apellido << endl;
         cout << "Área de conocimiento: " << listaLibros[i].area << endl;
         cout << "Publicador: " << listaLibros[i].publicador << endl;
         cout << "Estado: " << listaLibros[i].estado << endl;
@@ -221,7 +240,7 @@ int main()
 {
     int opcion = 0;
 
-    while (opcion != 6)
+    while (opcion != 8)
     {
         // Mostramos el menú de opciones y pedimos una opción al usuario
         cout << "Biblioteca" << endl;
